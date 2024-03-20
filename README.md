@@ -114,3 +114,7 @@ Notebook used to develop the multiclass classification, eventually unused in the
 
 ## `skull_stripping.ipynb`
 Notebook used to develop the skull stripping model.
+
+# Declaration of AI
+
+  AI models (such as ChatGPT, CoPilot and Grammarlay) have been used as an assistance tool when coding models,  understanding python packages and increasing readibility of code.  It was also used to assist in improving grammar and readability when writting up the report.
