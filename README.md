@@ -83,3 +83,18 @@ model_SSM = load_model('model_binary.h5') # make sure .py file is in same direct
 predictions = model_SSM.predict(image, mask)
 print(predictions) # 0 for no tumor, 1 for tumor
 ```
+
+# Dataset 
+
+Dataset obtained and stored in `Training` and `Testing` is from:
+
+```
+@misc{sartaj_bhuvaji_ankita_kadam_prajakta_bhumkar_sameer_dedge_swati_kanchan_2020,
+	title={Brain Tumor Classification (MRI)},
+	url={https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri},
+	DOI={10.34740/KAGGLE/DSV/1183165},
+	publisher={Kaggle},
+	author={Sartaj Bhuvaji and Ankita Kadam and Prajakta Bhumkar and Sameer Dedge and Swati Kanchan},
+	year={2020}
+}
+```
