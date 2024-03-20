@@ -98,3 +98,19 @@ Dataset obtained and stored in `Training` and `Testing` is from:
 	year={2020}
 }
 ```
+
+# Features
+## `Mask_Training` and `Mask_Training`
+Located the 80 hand drawn mask for SSM.
+
+## `New_Mask_Training` and `New_Mask_Training`
+Result of SSM for the entirety of the dataset.
+
+## `notebook_initial_model.ipynb`
+Notebook used to develop the binary classification. 
+
+## `notebook_multiclass_model.ipynb`
+Notebook used to develop the multiclass classification, eventually unused in the report.
+
+## `skull_stripping.ipynb`
+Notebook used to develop the skull stripping model.
