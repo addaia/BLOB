@@ -117,4 +117,4 @@ Notebook used to develop the skull stripping model.
 
 # Declaration of AI
 
-  AI models (such as ChatGPT, CoPilot and Grammarly) have been used as assistance tools when coding models, understanding python packages and increasing readibility of code. It was also used to assist in improving grammar and readability when writting up the report.
+  AI models (such as ChatGPT, CoPilot and Grammarly) have been used as assistance tools when coding models, understanding python packages and increasing readibility of code. They were also used to assist in improving grammar and readability when writting up the report.
