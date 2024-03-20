@@ -9,7 +9,7 @@ This report focuses on tumor detection in brain scans, with a critical emphasis 
 # Installation Instructions
 
 ## Prerequisites
-Ensure you have Python 3.x and Pip installed on your system.
+Ensure you have Python 3.10.9 and Pip installed on your system.
 
 ## Setup
 1. **Create and activate a virtual environment:**
@@ -30,7 +30,56 @@ Ensure you have Python 3.x and Pip installed on your system.
 ```
 pip install tensorflow numpy opencv-python-headless scikit-learn matplotlib seaborn pandas scikit-image pillow scipy
 ```
+# Usage of Pre-Trained Model
 
+The pre-trained models discussed in the report are stored in this repository. The skull stripping model is `model_binary_SSM.h5` and the binary classification is `model_binary.h5`
 
+## Skull Stripping Model
+1. ** Import the necessary module:
 
+```python
+from tensorflow.keras.models import load_model
+import matplotlib.pyplot as plt
+```
 
+2. ** Load Model**:
+   Use the `load_model` function, passing the path, if necessary, to your `model_binary_SSM.h5` file:
+
+```python
+model_SSM = load_model('model_binary_SSM.h5') # make sure .py file is in same directory as .h5 or specify path
+```
+
+3. **Using the model**:
+   The skull stripping model is designed to process CT scans of the brain, requiring specific input formats:
+    - **Input Image**: A CT scan image of the brain, expected to be in the shape of `(128, 128, 3)`. 
+
+    - **Input Mask**: A template mask in binary form, with a shape of `(128, 128, 1)`, which indicates areas of interest (e.g., the brain) to be stripped from the skull. If you do not have a custom mask, a default one can be used, which is available in the `skull_stripping.py` script under the variable `image_template_masks_array`.
+
+```python
+predictions = model_SSM.predict(image, mask)
+plt.imshow(predictions)
+plt.axis('off')
+plt.show()
+```
+## Binary Classification Model
+1. ** Import the necessary module:
+
+```python
+from tensorflow.keras.models import load_model
+```
+
+2. ** Load Model**:
+   Same as before but with the file `model_binary.h5` file:
+
+```python
+model_SSM = load_model('model_binary.h5') # make sure .py file is in same directory as .h5 or specify path
+```
+
+3. **Using the model**:
+   The Binary Classification requires only the input image, preferably for better results, preprocessed with SSM:
+    - **Input Image**: A CT scan image of the brain, expected to be in the shape of `(128, 128, 3)`. 
+
+```python
+predictions = model_SSM.predict(image, mask)
+print(predictions) # 0 for no tumor, 1 for tumor
+```
